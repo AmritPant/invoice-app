@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex } from "@chakra-ui/react";
 import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       {/* Header */}
       <Header />
       {/* Main */}
+      <Main />
     </Flex>
   );
 }
