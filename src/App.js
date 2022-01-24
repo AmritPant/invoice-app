@@ -1,7 +1,15 @@
-import "./App.css";
+import React from "react";
+import { Flex } from "@chakra-ui/react";
+import Header from "./components/Header/Header";
 
 function App() {
-  return <div className="App">Hello I am from react</div>;
+  return (
+    <Flex>
+      {/* Header */}
+      <Header />
+      {/* Main */}
+    </Flex>
+  );
 }
 
 export default App;
