@@ -1,0 +1,38 @@
+.invoice-filter {
+  display: flex;
+  align-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: -0.25px;
+}
+
+.invoice-filter input {
+  display: none;
+}
+
+.invoice-filter span {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: #1e2139;
+  border-radius: 2px;
+  margin-right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invoice-filter span img {
+  display: none;
+}
+
+.invoice-filter:hover span {
+  border: 1px solid #7c5dfa;
+}
+
+.invoice-filter input:checked + span {
+  background-color: #7c5dfa;
+}
+
+.invoice-filter input:checked + span img {
+  display: block;
+}
