@@ -12,6 +12,7 @@ function Header() {
       borderRadius="0 2rem 2rem 0"
       bgColor="#1E2139"
       position="sticky"
+      top="0"
     >
       <LogoBox />
       <ThemeBox />
