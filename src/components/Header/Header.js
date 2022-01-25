@@ -13,6 +13,7 @@ function Header() {
       bgColor="#1E2139"
       position="sticky"
       top="0"
+      zIndex="400"
     >
       <LogoBox />
       <ThemeBox />
