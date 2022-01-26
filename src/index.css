@@ -14,3 +14,7 @@ body {
   font-family: "Spartan", sans-serif;
   background-color: #141625 !important;
 }
+
+.overflow {
+  overflow: hidden !important;
+}
