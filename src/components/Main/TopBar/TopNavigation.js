@@ -12,7 +12,7 @@ function TopNavigation() {
   };
 
   return (
-    <Box ml="28rem" display="flex" alignItems="center" position="relative">
+    <Box ml="31rem" display="flex" alignItems="center" position="relative">
       <Box
         display="flex"
         alignItems="center"
@@ -26,7 +26,7 @@ function TopNavigation() {
         <Image src={DownArrow} h="4.23px" w="8.26px" />
       </Box>
       {filterBoxStatus && <FIlterInvoices />}
-      <TopBarButton  />
+      <TopBarButton />
     </Box>
   );
 }
