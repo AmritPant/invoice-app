@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Text, Button } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
 import addIcon from "../../../assets/icon-plus.svg";
+import ModalContext from "../../../contexts/ModalContex";
+import FormContext from "../../../contexts/FormContext";
 
 function TopBarButton() {
+  const ModalCtx = useContext(ModalContext);
+  const FormCtx = useContext(FormContext);
+
+  const onClickBtnHandler = () => {
+    ModalCtx.setModalStatus(true);
+    FormCtx.setFormStatus(true);
+  };
+
   return (
     <Box>
       <Button
@@ -14,6 +24,12 @@ function TopBarButton() {
         backgroundColor="#7C5DFA"
         borderRadius="24px"
         _hover={{ backgroundColor: "#9277FF" }}
+        _active={{
+          backgroundColor: "#9277FF",
+          outline: "none",
+          border: "none",
+        }}
+        onClick={onClickBtnHandler}
       >
         <Box
           width="3.2rem"

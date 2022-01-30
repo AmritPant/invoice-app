@@ -7,7 +7,6 @@ import FIlterInvoices from "./FIlterInvoices";
 
 function TopNavigation() {
   const [filterBoxStatus, setFilterBoxStatus] = useState(false);
-
   const onClickFilterHandler = () => {
     setFilterBoxStatus((prevStatus) => !prevStatus);
   };
@@ -27,7 +26,7 @@ function TopNavigation() {
         <Image src={DownArrow} h="4.23px" w="8.26px" />
       </Box>
       {filterBoxStatus && <FIlterInvoices />}
-      <TopBarButton />
+      <TopBarButton  />
     </Box>
   );
 }

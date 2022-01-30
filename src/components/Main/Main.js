@@ -17,6 +17,7 @@ function Main() {
       <TopBar />
       {/* Invoices */}
       <Invoices />
+      {/* Invoice Input */}
     </Box>
   );
 }

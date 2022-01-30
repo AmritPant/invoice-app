@@ -36,6 +36,7 @@ function FIlterInvoices() {
       zIndex="100"
       borderRadius="8px"
       padding="2rem"
+      className="inovice-filter-container"
     >
       <Box
         cursor="pointer"
