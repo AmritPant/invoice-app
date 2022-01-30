@@ -18,3 +18,7 @@ body {
 .overflow {
   overflow: hidden !important;
 }
+
+*:focus {
+  box-shadow: none !important;
+}
