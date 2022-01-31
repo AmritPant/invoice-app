@@ -4,6 +4,7 @@ import Invoice from "./Invoice";
 import InvoiceData from "../../../data.json";
 import NoInvoice from "./NoInvoice";
 import FilterInvoiceContext from "../../../contexts/FilterInvoice";
+import { Link } from "react-router-dom";
 
 function Invoices() {
   let Data;
@@ -28,14 +29,15 @@ function Invoices() {
       {Data.length > 0 ? (
         Data.map((invoiceData) => {
           return (
-            <Invoice
-              key={invoiceData.id}
-              id={invoiceData.id}
-              dueDate={invoiceData.paymentDue}
-              clientName={invoiceData.clientName}
-              status={invoiceData.status}
-              price={invoiceData.total}
-            />
+            <Link to={`/invoices/${invoiceData.id}`} key={invoiceData.id}>
+              <Invoice
+                id={invoiceData.id}
+                dueDate={invoiceData.paymentDue}
+                clientName={invoiceData.clientName}
+                status={invoiceData.status}
+                price={invoiceData.total}
+              />
+            </Link>
           );
         })
       ) : (
