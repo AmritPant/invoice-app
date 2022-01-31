@@ -8,14 +8,17 @@ function ButtonSecondary({ children, onClick }) {
       h="4.8rem"
       bgColor="#252945"
       borderRadius="2.4rem"
-      color="#7E88C3"
+      color="#fff"
       fontSize="12px"
       fontWeight="bold"
       letterSpacing="-0.25px"
       marginRight="1rem"
       onClick={onClick}
-      _hover={{ color: "#979797", bgColor: "#fff" }}
-      _active={{ bgColor: "#fff", border: "none !important", color: "#979797" }}
+      _hover={{ color: "#7E88C3", bgColor: "#DFE3FA" }}
+      _active={{
+        color: "#7e88c3",
+        bgcolor: "#DFE3FA",
+      }}
     >
       {children}
     </Button>
