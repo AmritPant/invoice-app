@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Flex } from "@chakra-ui/react";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
@@ -8,6 +8,8 @@ import ModalContext from "./contexts/ModalContex";
 import InvoiceForm from "./components/Main/InvoiceForm/InvoiceForm";
 import FormContext from "./contexts/FormContext";
 import { BODY } from "./Helpers/Helper";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import InvoicePage from "./pages/InvoicePage";
 
 function App() {
   const [filterInvoiceStatus, setFilterInvoiceStatus] = useState([]);
@@ -41,7 +43,16 @@ function App() {
             <Header />
             {/* Main */}
             {formStatus && <InvoiceForm />}
-            <Main />
+            <BrowserRouter>
+              <Switch>
+                <Route path="/" exact>
+                  <Main />
+                </Route>
+                <Route path="/invoices/:invoiceId">
+                  <InvoicePage />
+                </Route>
+              </Switch>
+            </BrowserRouter>
           </Flex>
         </FormContext.Provider>
       </ModalContext.Provider>
