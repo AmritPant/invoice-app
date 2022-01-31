@@ -17,7 +17,6 @@ function ItemList() {
         bgColor="#252945"
         color="white"
         borderRadius="2.4rem"
-        color="white"
         height="4rem"
         width="100%"
         _hover={{ bgColor: "#979797" }}
