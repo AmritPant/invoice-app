@@ -1,0 +1,12 @@
+.goBackLink {
+  display: inline-block;
+  align-self: flex-start;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: -0.25px;
+  margin-bottom: 2rem;
+
+  &:hover {
+    color: #888eb0;
+  }
+}
