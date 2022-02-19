@@ -6,7 +6,7 @@ import iconRightArrow from "../../../assets/icon-arrow-right.svg";
 import StatusBox from "../../UI/StatusBox";
 
 function Invoice({ id, price, clientName, dueDate, status }) {
-  const finalPrice = `£ ${price.toLocaleString("en-US")}`;
+  const finalPrice = `£ ${price?.toLocaleString("en-US")}`;
   const tempDate = new Date(dueDate);
 
   // prettier-ignore
