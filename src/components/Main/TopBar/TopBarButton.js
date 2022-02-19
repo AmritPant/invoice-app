@@ -1,17 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Box, Text, Button } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
 import addIcon from "../../../assets/icon-plus.svg";
-import ModalContext from "../../../contexts/ModalContex";
-import FormContext from "../../../contexts/FormContext";
+import { BODY } from "../../../Helpers/Helper";
+import { useDispatch } from "react-redux";
+import { FormSliceActions, ModalSliceActions } from "../../../store/store";
 
 function TopBarButton() {
-  const ModalCtx = useContext(ModalContext);
-  const FormCtx = useContext(FormContext);
+  const dispatch = useDispatch();
 
   const onClickBtnHandler = () => {
-    ModalCtx.setModalStatus(true);
-    FormCtx.setFormStatus(true);
+    BODY.scrollIntoView();
+    dispatch(ModalSliceActions.setModalStatus(true));
+    dispatch(FormSliceActions.setFormStatus(true));
   };
 
   return (
