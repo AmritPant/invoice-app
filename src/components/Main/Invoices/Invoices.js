@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import Invoice from "./Invoice";
-import InvoiceData from "../../../data.json";
 import NoInvoice from "./NoInvoice";
 import FilterInvoiceContext from "../../../contexts/FilterInvoice";
-import { Link } from "react-router-dom";
 
 function Invoices() {
+  const InvoiceData = useSelector((state) => state.invoice.data);
+
   let Data;
   const InvoiceCtx = useContext(FilterInvoiceContext);
   if (InvoiceCtx.inputEls.length > 0) {
