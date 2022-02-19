@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from "react";
-import { Box, Checkbox } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import "./FilterInvoices.scss";
 import iconChck from "../../../assets/icon-check.svg";
 import FilterInvoiceContext from "../../../contexts/FilterInvoice";
@@ -10,7 +10,6 @@ function FIlterInvoices() {
   const inputEl2 = useRef();
   const inputEl3 = useRef();
 
-  const checkBoxes = ["Draft", "Pending", "Paid"];
   const inputArr = [inputEl1, inputEl2, inputEl3];
 
   const onClickFilterHandler = function () {
