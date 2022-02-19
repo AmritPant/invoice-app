@@ -1,18 +1,22 @@
-import React, { useContext } from "react";
-import { Box } from "@chakra-ui/react";
-import ModalContext from "../../contexts/ModalContex";
-import FormContext from "../../contexts/FormContext";
-import { BODY } from "../../Helpers/Helper";
+import React from 'react';
+import { Box } from '@chakra-ui/react';
+import { BODY } from '../../Helpers/Helper';
+import { useDispatch } from 'react-redux';
+import {
+  FormSliceActions,
+  ModalSliceActions,
+  ModalPopupActions,
+} from '../../store/store';
 
 function Modal() {
-  const ModalCtx = useContext(ModalContext);
-  const FormCtx = useContext(FormContext);
-
+  const dispatch = useDispatch();
   const onClickModalHandler = () => {
-    ModalCtx.setModalStatus(false);
-    FormCtx.setFormStatus(false);
-    BODY.classList.remove("overflow");
+    dispatch(ModalSliceActions.setModalStatus(false));
+    dispatch(FormSliceActions.setFormStatus(false));
+    dispatch(ModalPopupActions.setModalPopupStatus(false));
+    BODY.classList.remove('overflow');
   };
+
   return (
     <Box
       pos="absolute"
