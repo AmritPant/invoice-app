@@ -10,6 +10,7 @@ function ButtonPrimary({ children, onClick }) {
       borderRadius="2.4rem"
       fontSize="1.2rem"
       fontWeight="bold"
+      onClick={onClick}
       letterSpacing="-0.25px"
       _hover={{ bgColor: "#9277FF" }}
       _active={{ bgColor: "#9277FF", border: "none !important" }}
