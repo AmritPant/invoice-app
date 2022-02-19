@@ -22,6 +22,7 @@
     },
     "items": [
       {
+        "id": "i1",
         "name": "Brand Guidelines",
         "quantity": 1,
         "price": 1800.9,
@@ -53,12 +54,14 @@
     },
     "items": [
       {
+        "id": "i1",
         "name": "Banner Design",
         "quantity": 1,
         "price": 156.0,
         "total": 156.0
       },
       {
+        "id": "i2",
         "name": "Email Design",
         "quantity": 2,
         "price": 200.0,
@@ -90,6 +93,7 @@
     },
     "items": [
       {
+        "id": "i1",
         "name": "Website Redesign",
         "quantity": 1,
         "price": 14002.33,
@@ -121,6 +125,7 @@
     },
     "items": [
       {
+        "id": "i1",
         "name": "Logo Sketches",
         "quantity": 1,
         "price": 102.04,
@@ -152,12 +157,14 @@
     },
     "items": [
       {
+        "id": "i1",
         "name": "New Logo",
         "quantity": 1,
         "price": 1532.33,
         "total": 1532.33
       },
       {
+        "id": "i2",
         "name": "Brand Guidelines",
         "quantity": 1,
         "price": 2500.0,
@@ -189,6 +196,7 @@
     },
     "items": [
       {
+        "id": "i1",
         "name": "Web Design",
         "quantity": 1,
         "price": 6155.91,
@@ -220,6 +228,7 @@
     },
     "items": [
       {
+        "id": "i1",
         "name": "Logo Re-design",
         "quantity": 1,
         "price": 3102.04,
