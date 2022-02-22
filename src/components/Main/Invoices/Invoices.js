@@ -11,7 +11,10 @@ function Invoices() {
 
   let Data;
   const InvoiceCtx = useContext(FilterInvoiceContext);
-  if (InvoiceCtx.inputEls.length > 0) {
+  if (
+    InvoiceCtx.inputEls.length > 0 &&
+    InvoiceCtx.inputEls.every((inputEl) => inputEl.current)
+  ) {
     const checkedInput = InvoiceCtx.inputEls
       .filter((input) => input.current.checked === true)
       .at(0);
