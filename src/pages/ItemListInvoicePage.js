@@ -1,13 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import Data from "../data.json";
 
 function ItemListInvoicePage(props) {
+  const Data = useSelector((state) => state.invoice.data);
   const clickedItem = Data.filter((invoice) => invoice.id === props.data.id)[0];
-  const amountDue = clickedItem.items.reduce(
-    (prevPrice, curInvoice) => prevPrice + curInvoice.total,
-    0
-  );
+  const amountDue = clickedItem.total;
+
   return (
     <Box mt="4rem" p="2rem 0 0 0" bgColor="#252945" borderRadius="8px 8px 00">
       <Box p="0 3rem">
@@ -44,7 +43,7 @@ function ItemListInvoicePage(props) {
                     .toFixed(2)
                     .toLocaleString("en-US")}`}</Text>
 
-                  <Text ml="5rem">{`£${Number(item.total)
+                  <Text ml="5rem">{`£${Number(item.price * item.quantity)
                     .toFixed(2)
                     .toLocaleString("en-US")}`}</Text>
                 </Flex>
