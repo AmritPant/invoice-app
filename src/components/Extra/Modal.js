@@ -1,20 +1,21 @@
-import React from 'react';
-import { Box } from '@chakra-ui/react';
-import { BODY } from '../../Helpers/Helper';
-import { useDispatch } from 'react-redux';
+import React from "react";
+import { Box } from "@chakra-ui/react";
+import { BODY } from "../../Helpers/Helper";
+import { useDispatch } from "react-redux";
 import {
   FormSliceActions,
   ModalSliceActions,
   ModalPopupActions,
-} from '../../store/store';
+} from "../../store/store";
 
 function Modal() {
   const dispatch = useDispatch();
+
   const onClickModalHandler = () => {
     dispatch(ModalSliceActions.setModalStatus(false));
     dispatch(FormSliceActions.setFormStatus(false));
     dispatch(ModalPopupActions.setModalPopupStatus(false));
-    BODY.classList.remove('overflow');
+    BODY.classList.remove("overflow");
   };
 
   return (

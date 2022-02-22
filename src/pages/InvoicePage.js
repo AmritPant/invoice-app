@@ -8,13 +8,13 @@ import ModalPopup from "../components/Extra/ModalPopup";
 import InvoiceForm from "../components/Main/InvoiceForm/InvoiceForm";
 
 function InvoicePage() {
-  const ModalPopupStatus = useSelector(state => state.popup.modalPopupStatus);
-  const Data = useSelector(state => state.invoice.data);
-  const InvoiceFormStatus = useSelector(state => state.form.formStatus);
+  const ModalPopupStatus = useSelector((state) => state.popup.modalPopupStatus);
+  const Data = useSelector((state) => state.invoice.data);
+  const InvoiceFormStatus = useSelector((state) => state.form.formStatus);
 
   const params = useParams();
   const ClickedInvoice = Data.filter(
-    invoice => invoice.id === params.invoiceId
+    (invoice) => invoice.id === params.invoiceId
   ).at(0);
 
   return (

@@ -23,7 +23,7 @@ function InvoicePageHeader({ status, id }) {
   };
 
   const markAsPaidHandler = () => {
-    dispatch(invoiceDataActions.markAsPaid(id));
+    dispatch(invoiceDataActions.markAsPaid({ id }));
   };
 
   const editButtonHandler = () => {

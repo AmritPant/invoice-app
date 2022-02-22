@@ -1,44 +1,56 @@
 import React from "react";
 import { Box, Input, FormLabel, Select } from "@chakra-ui/react";
-import useInput from "../../../../Hooks/use-input";
-import useInputBoxHeading from "../../../../Hooks/use-inputBox-Heading";
+import InputHeading from "../../../UI/InputHeading";
+import CustomInput from "../../../UI/Input";
+import CustomDropdown from "../../../UI/CustomDropdown";
 
-function BillTo() {
-  const ClientName = useInput({
-    name: "Client's Name",
-    gridArea: "ClientName",
-  });
-
-  const ClientEmail = useInput({
-    name: "Client's Email",
-    gridArea: "ClientEmail",
-  });
-
-  const StreetAdress = useInput({
-    name: "Street Adress",
-    gridArea: "Street",
-  });
-
-  const City = useInput({ name: "City", gridArea: "city" });
-  const Post = useInput({ name: "Post Code", gridArea: "post" });
-  const Country = useInput({ name: "Country", gridArea: "country" });
-  const ProductDescription = useInput({
-    name: "Product Description",
-    gridArea: "Product",
-  });
-
-  const Heading = useInputBoxHeading("Bill To");
+function BillTo({ data }) {
+  const tempDate = new Date();
+  // Used French --> Canada because that supports the required format
+  // Visit this link for  more info:  https://gist.github.com/mlconnor/1887156
+  const TodayDate = tempDate.toLocaleDateString("fr-CA");
 
   return (
     <Box>
-      {Heading}
+      <InputHeading name="Bill To" />
       <Box className="invoice-input__billTo">
-        {ClientName}
-        {ClientEmail}
-        {StreetAdress}
-        {City}
-        {Post}
-        {Country}
+        <CustomInput
+          name="Client's Name"
+          id="clientName"
+          gridArea="ClientName"
+          value={data ? data.clientName : ""}
+        />
+        <CustomInput
+          name="Client's Email"
+          id="clientEmail"
+          gridArea="ClientEmail"
+          value={data ? data.clientEmail : ""}
+        />
+        <CustomInput
+          name="Street Address"
+          id="streetBillTo"
+          gridArea="Street"
+          value={data ? data.clientAddress.street : ""}
+        />
+        <CustomInput
+          name="City"
+          id="cityBillTo"
+          gridArea="city"
+          value={data ? data.clientAddress.city : ""}
+        />
+        <CustomInput
+          name="Post Code"
+          id="postCodeBillTo"
+          gridArea="post"
+          value={data ? data.clientAddress.postCode : ""}
+        />
+        <CustomInput
+          name="Country"
+          id="countryBillTo"
+          gridArea="country"
+          value={data ? data.clientAddress.country : ""}
+        />
+
         {/* Date and select Box */}
         <Box
           gridArea="dateBox"
@@ -48,19 +60,20 @@ function BillTo() {
         >
           <Box flex="1" mr="1rem">
             <FormLabel htmlFor="date">Item Date </FormLabel>
-            <Input type="date" id="date" />
+            <Input
+              type="date"
+              id="date"
+              defaultValue={data ? data.createdAt : TodayDate}
+            />
           </Box>
-          <Box flex="1">
-            <FormLabel htmlFor="Payment Terms">Payment Terms</FormLabel>
-            <Select placeholder="Net 30 Days" id="Payment Terms">
-              <option>Net 1 Day</option>
-              <option>Net 7 Days</option>
-              <option>Net 14 Days</option>
-              <option>Net 30 Days</option>
-            </Select>
-          </Box>
+          <CustomDropdown value={data ? data.paymentTerms : 30} />
         </Box>
-        {ProductDescription}
+        <CustomInput
+          name="Product Description"
+          id="productDescription"
+          gridArea="Product"
+          value={data ? data.description : ""}
+        />
       </Box>
     </Box>
   );

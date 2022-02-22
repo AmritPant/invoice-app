@@ -43,7 +43,6 @@
   }
 
   & label {
-    color: #dfe3fa;
     font-weight: medium;
     font-size: 1.2rem;
     letter-spacing: -0.25px;
@@ -59,6 +58,7 @@
     color: white;
     font-size: 1.2rem;
     cursor: pointer;
+    border: 1px solid #252945;
     height: 3.5rem;
     letter-spacing: -0.25px;
 
@@ -67,11 +67,28 @@
       border-radius: 8px;
     }
 
-    &:focus {
+    &:focus,
+    &:hover {
       outline-style: solid;
       outline-width: 1px;
       outline-color: #7c5dfa;
       outline-offset: 0;
     }
   }
+}
+
+.error {
+  color: #ec5757 !important;
+  display: block;
+
+  & input {
+    outline-style: solid !important;
+    outline-width: 1px !important;
+    outline-color: #ec5757 !important;
+    outline-offset: 0 !important;
+  }
+}
+
+.deleteImgBox:hover > svg > path {
+  fill: #ec5757;
 }

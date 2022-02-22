@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Text, Box, FormLabel, Input } from "@chakra-ui/react";
 
 const CustomInput = ({
@@ -12,17 +12,23 @@ const CustomInput = ({
   showLabel = "show",
 }) => {
   const [isError, setError] = useState(false);
+  const inputBoxEl = useRef();
 
-  const inputBlurHandler = event => {
+  const inputBlurHandler = (event) => {
     if (event.target.value.trim().length < 1) setError(true);
   };
 
-  const inputChangeHandler = event => {
+  const inputChangeHandler = (event) => {
     if (event.target.value.trim().length > 0) setError(false);
   };
 
   return (
-    <Box gridArea={gridArea} style={style} className={isError ? "error" : ""}>
+    <Box
+      ref={inputBoxEl}
+      gridArea={gridArea}
+      style={style}
+      className={isError ? "error" : ""}
+    >
       <Box display="flex" justifyContent="space-between">
         {showLabel === "show" && <FormLabel htmlFor={id}>{name}</FormLabel>}
         {isError && <Text>Can't be empty</Text>}

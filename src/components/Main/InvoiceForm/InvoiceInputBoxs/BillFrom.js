@@ -1,23 +1,37 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import useInputBoxHeading from "../../../../Hooks/use-inputBox-Heading";
-import useInput from "../../../../Hooks/use-input";
+import Input from "../../../../components/UI/Input";
+import InputHeading from "../../../UI/InputHeading";
 
-function BillFrom() {
-  const Heading = useInputBoxHeading("Bill From");
-  const StreetAdress = useInput({ name: "Street Address", gridArea: "street" });
-  const City = useInput({ name: "City", gridArea: "city" });
-  const Postal = useInput({ name: "Postal Code", gridArea: "postal" });
-  const Country = useInput({ name: "Country ", gridArea: "country" });
-
+function BillFrom({ data }) {
   return (
     <Box>
-      {Heading}
+      <InputHeading name="Bill From" />
       <Box className="invoice-input__billFrom">
-        {StreetAdress}
-        {City}
-        {Postal}
-        {Country}
+        <Input
+          name="Street Address"
+          id="streetBillFrom"
+          gridArea="street"
+          value={data ? data.senderAddress.street : ""}
+        />
+        <Input
+          name="City"
+          id="cityBillFrom"
+          gridArea="city"
+          value={data ? data.senderAddress.city : ""}
+        />
+        <Input
+          name="Post Code"
+          id="postCodeBillFrom"
+          gridArea="postal"
+          value={data ? data.senderAddress.postCode : ""}
+        />
+        <Input
+          name="Country"
+          id="countryBillFrom"
+          gridArea="country"
+          value={data ? data.senderAddress.country : ""}
+        />
       </Box>
     </Box>
   );
