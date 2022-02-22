@@ -15,7 +15,12 @@ function InovoicePageDetail(props) {
     >
       <Flex justifyContent="space-between">
         <Box>
-          <Heading>{props.data.id}</Heading>
+          <Heading>
+            <Text display="inline-block" color="#888EB0">
+              #
+            </Text>
+            {props.data.id}
+          </Heading>
           <Text>{props.data.description}</Text>
         </Box>
         <Box fontSize="1.1rem" color="#DFE3FA">
