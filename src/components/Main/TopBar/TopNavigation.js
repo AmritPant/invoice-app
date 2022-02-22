@@ -7,9 +7,19 @@ import FIlterInvoices from "./FIlterInvoices";
 
 function TopNavigation() {
   const [filterBoxStatus, setFilterBoxStatus] = useState(false);
+
   const onClickFilterHandler = () => {
     setFilterBoxStatus((prevStatus) => !prevStatus);
   };
+
+  document.addEventListener("click", (event) => {
+    if (
+      event.target.closest("#filterStatusBox")?.id === "filterStatusBox" ||
+      event.target.closest("#filterText")?.id === "filterText"
+    )
+      return;
+    setFilterBoxStatus(false);
+  });
 
   return (
     <Box ml="31rem" display="flex" alignItems="center" position="relative">
@@ -19,13 +29,14 @@ function TopNavigation() {
         mr="3rem"
         cursor="pointer"
         onClick={onClickFilterHandler}
+        id="filterText"
       >
         <Text fontSize="1.2rem" letterSpacing="-0.25px" mr="1rem">
           Filter By Status
         </Text>
         <Image src={DownArrow} h="4.23px" w="8.26px" />
       </Box>
-      {filterBoxStatus && <FIlterInvoices />}
+      <FIlterInvoices display={filterBoxStatus ? "block" : "none"} />
       <TopBarButton />
     </Box>
   );

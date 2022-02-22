@@ -4,7 +4,7 @@ import "./FilterInvoices.scss";
 import iconChck from "../../../assets/icon-check.svg";
 import FilterInvoiceContext from "../../../contexts/FilterInvoice";
 
-function FIlterInvoices() {
+function FIlterInvoices(props) {
   const InvoiceCtx = useContext(FilterInvoiceContext);
   const inputEl1 = useRef();
   const inputEl2 = useRef();
@@ -36,6 +36,8 @@ function FIlterInvoices() {
       borderRadius="8px"
       padding="2rem"
       className="inovice-filter-container"
+      display={props.display}
+      id="filterStatusBox"
     >
       <Box
         cursor="pointer"
