@@ -50,25 +50,19 @@
 
   & input {
     position: relative;
-    background-color: #1e2139;
-    border: none;
     border-radius: 4px;
     padding: 0.5rem 1rem;
     font-weight: bold;
-    color: white;
     font-size: 1.2rem;
     cursor: pointer;
-    border: 1px solid #252945;
+    border: 1px solid;
     height: 3.5rem;
     letter-spacing: -0.25px;
-
-    & option {
-      background-color: #252945;
-      border-radius: 8px;
-    }
+    border: 1px solid transparent;
 
     &:focus,
     &:hover {
+      border: 1px solid transparent !important;
       outline-style: solid;
       outline-width: 1px;
       outline-color: #7c5dfa;

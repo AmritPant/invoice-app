@@ -31,7 +31,12 @@ function TopNavigation() {
         onClick={onClickFilterHandler}
         id="filterText"
       >
-        <Text fontSize="1.2rem" letterSpacing="-0.25px" mr="1rem">
+        <Text
+          fontSize="1.2rem"
+          letterSpacing="-0.25px"
+          fontWeight="bold"
+          mr="1rem"
+        >
           Filter By Status
         </Text>
         <Image src={DownArrow} h="4.23px" w="8.26px" />

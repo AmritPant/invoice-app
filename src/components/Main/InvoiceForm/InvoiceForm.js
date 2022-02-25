@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import moment from "moment";
 import { Flex, Box, Heading, Text } from "@chakra-ui/react";
 import InvoiceInput from "./InvoiceInputBoxs/InvoiceInput";
@@ -15,6 +15,7 @@ import {
 
 function InvoiceForm({ type, data }) {
   const dispatch = useDispatch();
+  const curTheme = useSelector((state) => state.theme.curTheme);
   const itemList = useSelector((state) => state.form.itemData);
   const invoiceInputRef = useRef();
 
@@ -28,6 +29,7 @@ function InvoiceForm({ type, data }) {
     const inputArr = Array.from(
       invoiceInputRef.current.querySelectorAll("input")
     );
+
     const getValueOfInput = (id) =>
       inputArr.find((inputElement) => inputElement.id === id).value;
 
@@ -139,9 +141,9 @@ function InvoiceForm({ type, data }) {
       justifyContent="space-between"
       padding="2rem 3rem"
       height="100vh"
-      bgColor="#141625"
+      bgColor={curTheme === "dark" ? "#141625" : "#fff"}
       zIndex="300"
-      color="#fff"
+      color={`var(--theme-${curTheme}-textColorPrimary)`}
       width="40%"
       className="invoice-form"
     >

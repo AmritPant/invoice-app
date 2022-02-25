@@ -10,10 +10,9 @@
   display: none;
 }
 
-.invoice-filter span {
+.invoice-filter div {
   height: 1.6rem;
   width: 1.6rem;
-  background-color: #1e2139;
   border-radius: 2px;
   margin-right: 1rem;
   display: inline-flex;
@@ -21,18 +20,18 @@
   justify-content: center;
 }
 
-.invoice-filter span img {
+.invoice-filter div img {
   display: none;
 }
 
-.invoice-filter:hover span {
+.invoice-filter:hover div {
   border: 1px solid #7c5dfa;
 }
 
-.invoice-filter input:checked + span {
+.invoice-filter input:checked + div {
   background-color: #7c5dfa;
 }
 
-.invoice-filter input:checked + span img {
+.invoice-filter input:checked + div img {
   display: block;
 }

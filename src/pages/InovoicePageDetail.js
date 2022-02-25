@@ -1,13 +1,17 @@
 import React from "react";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import ItemListInvoicePage from "./ItemListInvoicePage";
+import { useSelector } from "react-redux";
 
 function InovoicePageDetail(props) {
+  const curTheme = useSelector((state) => state.theme.curTheme);
+  const mainTextColor = `var(--theme-${curTheme}-textColorPrimary)`;
+
   return (
     <Box
       width="65%"
-      bgColor="#1E2139"
-      color="#fff"
+      bgColor={`var(--theme-${curTheme}-secondaryBg)`}
+      color={mainTextColor}
       mt="2rem"
       p="5rem 6rem"
       fontSize="1.2rem"
@@ -23,31 +27,39 @@ function InovoicePageDetail(props) {
           </Heading>
           <Text>{props.data.description}</Text>
         </Box>
-        <Box fontSize="1.1rem" color="#DFE3FA">
+        <Box
+          fontSize="1.1rem"
+          color={`var(--theme-${curTheme}-textColorSecondary)`}
+        >
           <Text>{props.data.senderAddress.street}</Text>
           <Text>{props.data.senderAddress.city}</Text>
           <Text>{props.data.senderAddress.postCode}</Text>
           <Text>{props.data.senderAddress.country}</Text>
         </Box>
       </Flex>
-      <Flex mt="3rem" alignItems="flex-start" justifyContent="space-between">
+      <Flex
+        color={`var(--theme-${curTheme}-textColorSecondary)`}
+        mt="3rem"
+        alignItems="flex-start"
+        justifyContent="space-between"
+      >
         <Box>
           <Box mb="1.5rem">
-            <Text color="#DFE3FA"> Invoice Date</Text>
-            <Text fontSize="15" fontWeight="bold">
+            <Text> Invoice Date</Text>
+            <Text fontSize="15" color={mainTextColor} fontWeight="bold">
               {props.data.createdAt}
             </Text>
           </Box>
           <Box>
-            <Text color="#DFE3FA">Payment Due</Text>
-            <Text fontSize="15" fontWeight="bold">
+            <Text>Payment Due</Text>
+            <Text color={mainTextColor} fontSize="15" fontWeight="bold">
               {props.data.paymentDue}
             </Text>
           </Box>
         </Box>
-        <Box color="#DFE3FA">
-          <Text color="#DFE3FA">Bill To</Text>
-          <Text fontSize="15" fontWeight="bold">
+        <Box>
+          <Text>Bill To</Text>
+          <Text fontSize="15" fontWeight="bold" color={mainTextColor}>
             {props.data.clientName}
           </Text>
           <Text>{props.data.clientAddress.street}</Text>
@@ -56,8 +68,8 @@ function InovoicePageDetail(props) {
           <Text>{props.data.clientAddress.country}</Text>
         </Box>
         <Box>
-          <Text color="#DFE3FA">Send To</Text>
-          <Text fontSize="15" fontWeight="bold">
+          <Text>Send To</Text>
+          <Text color={mainTextColor} fontSize="15" fontWeight="bold">
             {props.data.clientEmail}
           </Text>
         </Box>

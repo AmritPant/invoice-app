@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BODY } from "../Helpers/Helper";
 import { Flex, Text, Box } from "@chakra-ui/react";
 import StatusBox from "../components/UI/StatusBox";
@@ -16,6 +16,7 @@ import {
 
 function InvoicePageHeader({ status, id }) {
   const dispatch = useDispatch();
+  const curTheme = useSelector((state) => state.theme.curTheme);
 
   const deleteButtonClickHandler = () => {
     dispatch(ModalSliceActions.setModalStatus(true));
@@ -36,12 +37,13 @@ function InvoicePageHeader({ status, id }) {
     <Box width="65%">
       <InvoicePageGoBackLink />
       <Flex
-        bgColor="#1E2139"
+        bgColor={`var(--theme-${curTheme}-secondaryBg)`}
         alignItems="center"
         p="1rem 3rem"
         borderRadius="0.8rem"
         justifyContent="space-between"
-        color="#fff"
+        color={`var(--theme-${curTheme}-textColorSecondary)`}
+        boxShadow="0 10px 10px -10px rgba(72,84,159,0.14)"
       >
         <Flex alignItems="center">
           <Text fontSize="1.2rem" fontWeight="medium" mr="1rem">

@@ -11,6 +11,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import InvoicePage from "./pages/InvoicePage";
 
 function App() {
+  const curTheme = useSelector((state) => state.theme.curTheme);
   const [filterInvoiceStatus, setFilterInvoiceStatus] = useState([]);
   const formStatus = useSelector((state) => state.form.formStatus);
   const modalStatus = useSelector((state) => state.modal.modalStatus);
@@ -21,6 +22,7 @@ function App() {
   };
 
   if (modalStatus) BODY.classList.add("overflow");
+  BODY.style.backgroundColor = `var(--theme-${curTheme}-primaryBg)`;
 
   return (
     <FilterInvoiceContext.Provider value={defaultInvoiceStatus}>

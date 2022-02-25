@@ -8,6 +8,7 @@ function ItemList({ data }) {
   const dispatch = useDispatch();
   const formStatus = useSelector((state) => state.form.formStatus);
   const isFormSubmitable = useSelector((state) => state.form.isFormSubmitable);
+  const curTheme = useSelector((state) => state.theme.curTheme);
 
   useEffect(() => {
     dispatch(FormSliceActions.clearData());
@@ -136,23 +137,23 @@ function ItemList({ data }) {
         );
       })}
       <Button
-        bgColor="#252945"
-        color="white"
+        bgColor={`var(--theme-${curTheme}-tertiaryBg)`}
+        color={`var(--theme-${curTheme}-textColorSecondary)`}
         borderRadius="2.4rem"
         height="4rem"
         width="100%"
-        _hover={{ bgColor: "#979797" }}
-        _active={{ bgColor: "#979797" }}
+        _hover={{ bgColor: `${curTheme === "dark" ? "#979797" : "#DFE3FA"}` }}
+        _active={{ bgColor: `${curTheme === "dark" ? "#979797" : "#DFE3FA"}` }}
         onClick={ItemListClickHandler}
       >
         +Add New Items
       </Button>
-      {!isFormSubmitable && (
-        <Box color="#EC5757" fontWeight="semibold" fontSize="1rem" mt="1rem">
-          <Text>- All fields must be added</Text>
+      <Box color="#EC5757" fontWeight="semibold" fontSize="1rem" mt="1rem">
+        {!isFormSubmitable && <Text>- All fields must be added</Text>}
+        {!itemArr.length > 0 && !isFormSubmitable && (
           <Text>- An item must be added</Text>
-        </Box>
-      )}
+        )}
+      </Box>
     </Box>
   );
 }

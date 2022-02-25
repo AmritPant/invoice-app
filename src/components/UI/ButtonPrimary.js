@@ -9,6 +9,7 @@ function ButtonPrimary({ children, onClick }) {
       bgColor="#7C5DFA"
       borderRadius="2.4rem"
       fontSize="1.2rem"
+      color="#fff"
       fontWeight="bold"
       onClick={onClick}
       letterSpacing="-0.25px"

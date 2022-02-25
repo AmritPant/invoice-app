@@ -16,7 +16,7 @@ function TopBarButton() {
   };
 
   return (
-    <Box>
+    <Box color="#fff">
       <Button
         varient="solid"
         width="15rem"

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Stack, Text, Box, FormLabel, Input, Flex } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
 import iconArroDown from "../../assets/icon-arrow-down.svg";
@@ -7,6 +8,10 @@ function CustomDropdown({ value = 30 }) {
   const [dropdownOptionStatus, setdropdownOptionStatus] = useState(false);
   const [curOptionNumber, setOptionNumber] = useState(value);
   const [defaultValue, setDefaultValue] = useState("Net 30 Days");
+  const curTheme = useSelector((state) => state.theme.curTheme);
+  const listItemBorder = `1px solid ${
+    curTheme === "dark" ? "#1e2139" : "#dfe3fa"
+  }`;
 
   useEffect(() => {
     if (curOptionNumber === 30) setDefaultValue("Net 30 Days");
@@ -25,7 +30,7 @@ function CustomDropdown({ value = 30 }) {
           id={curOptionNumber}
           value={defaultValue}
           readOnly={true}
-          onClick={() => setdropdownOptionStatus(prev => !prev)}
+          onClick={() => setdropdownOptionStatus((prev) => !prev)}
           _focus={{ outline: "none !important" }}
         />
         <Image
@@ -38,21 +43,21 @@ function CustomDropdown({ value = 30 }) {
       </Flex>
       {dropdownOptionStatus && (
         <Box
-          bgColor="#252945"
+          bgColor={`var(--theme-${curTheme}-tertiaryBg)`}
           h="14rem"
           w="15rem"
           pos="absolute"
           bottom="-15rem"
-          p="1rem"
+          p="1rem 0"
           borderRadius="0.8rem"
           boxShadow=" 0 1rem 2rem 0 rgba(0,0,0,0.25)"
           zIndex="500"
         >
           <Stack cursor="pointer" fontSize="1.2rem" fontWeight="bold" mb="2rem">
             <Text
-              borderBottom="1px solid #1E2139"
+              borderBottom={listItemBorder}
               _hover={{ color: "#9277FF" }}
-              padding="0 1rem"
+              padding="0 2rem"
               pb=".5rem"
               mb=".5rem"
               onClick={() => {
@@ -63,9 +68,9 @@ function CustomDropdown({ value = 30 }) {
               Net 1 Day
             </Text>
             <Text
-              borderBottom="1px solid #1E2139"
+              borderBottom={listItemBorder}
               _hover={{ color: "#9277FF" }}
-              padding="0 1rem"
+              padding="0 2rem"
               pb=".5rem"
               mb=".5rem"
               onClick={() => {
@@ -76,9 +81,9 @@ function CustomDropdown({ value = 30 }) {
               Net 7 Days
             </Text>
             <Text
-              borderBottom="1px solid #1E2139"
+              borderBottom={listItemBorder}
               _hover={{ color: "#9277FF" }}
-              padding="0 1rem"
+              padding="0 2rem"
               pb=".5rem"
               mb=".5rem"
               onClick={() => {
@@ -89,9 +94,8 @@ function CustomDropdown({ value = 30 }) {
               Net 14 Day
             </Text>
             <Text
-              borderBottom="1px solid #1E2139"
               _hover={{ color: "#9277FF" }}
-              padding="0 1rem"
+              padding="0 2rem"
               pb=".5rem"
               mb=".5rem"
               onClick={() => {

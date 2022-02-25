@@ -22,6 +22,7 @@ function BillTo({ data }) {
         />
         <CustomInput
           name="Client's Email"
+          type="email"
           id="clientEmail"
           gridArea="ClientEmail"
           value={data ? data.clientEmail : ""}

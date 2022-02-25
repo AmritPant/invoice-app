@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Box, Text } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
 import "./Invoice.scss";
@@ -6,6 +7,7 @@ import iconRightArrow from "../../../assets/icon-arrow-right.svg";
 import StatusBox from "../../UI/StatusBox";
 
 function Invoice({ id, price, clientName, dueDate, status }) {
+  const curTheme = useSelector((state) => state.theme.curTheme);
   const finalPrice = `£ ${price?.toLocaleString("en-US")}`;
   const tempDate = new Date(dueDate);
 
@@ -18,7 +20,7 @@ function Invoice({ id, price, clientName, dueDate, status }) {
   return (
     <Box
       display="Flex"
-      backgroundColor="#1E2139"
+      backgroundColor={`var(--theme-${curTheme}-secondaryBg)`}
       width="73.2rem"
       h="7.2rem"
       borderRadius="8px"
@@ -27,6 +29,7 @@ function Invoice({ id, price, clientName, dueDate, status }) {
       className="invoice"
       marginBottom="2rem"
       cursor="pointer"
+      color={`var(--theme-${curTheme}-textColorPrimary)`}
       boxShadow="0 10px 10px -10px rgb(72,84,159 , 0.14)"
       position="relative"
     >
@@ -34,10 +37,18 @@ function Invoice({ id, price, clientName, dueDate, status }) {
         <span className="span"># </span>
         {id}
       </Text>
-      <Text color="#DFE3FA" fontWeight="medium">
+      <Text
+        color={`var(--theme-${curTheme}-textColorSecondary)`}
+        fontWeight="medium"
+      >
         {finalDate}
       </Text>
-      <Text fontWeight="medium">{clientName}</Text>
+      <Text
+        fontWeight="medium"
+        color={`var(--theme-${curTheme}-textColorTertiary)`}
+      >
+        {clientName}
+      </Text>
       <Text
         marginLeft="auto !important"
         fontSize="1.6rem"

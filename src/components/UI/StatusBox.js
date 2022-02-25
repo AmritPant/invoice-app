@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Box, Text } from "@chakra-ui/react";
 
 function StatusBox({ status }) {
+  const curTheme = useSelector((state) => state.theme.curTheme);
   let statusColor;
   let statusBackgroundColor;
 
@@ -14,8 +16,9 @@ function StatusBox({ status }) {
     statusBackgroundColor = "#FF8F000D";
   }
   if (status === "draft") {
-    statusColor = "#DFE3FA";
-    statusBackgroundColor = "#DFE3FA0D";
+    statusColor = curTheme === "dark" ? "#DFE3FA" : "rgba(55,59,83)";
+    statusBackgroundColor =
+      curTheme === "dark" ? "#DFE3FA0D" : "rgba(55, 59, 83, 0.1)";
   }
 
   return (

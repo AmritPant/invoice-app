@@ -1,11 +1,13 @@
 import React, { useRef, useContext } from "react";
 import { Box } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import "./FilterInvoices.scss";
 import iconChck from "../../../assets/icon-check.svg";
 import FilterInvoiceContext from "../../../contexts/FilterInvoice";
 
 function FIlterInvoices(props) {
   const InvoiceCtx = useContext(FilterInvoiceContext);
+  const curTheme = useSelector((state) => state.theme.curTheme);
   const inputEl1 = useRef();
   const inputEl2 = useRef();
   const inputEl3 = useRef();
@@ -30,7 +32,7 @@ function FIlterInvoices(props) {
       right="55%"
       w="19.2rem"
       h="12.8rem"
-      bgColor="#252945"
+      bgColor={`var(--theme-${curTheme}-secondaryBg)`}
       boxShadow="0 10px 20px 0 rgb(0,0,0,0.25)"
       zIndex="100"
       borderRadius="8px"
@@ -51,9 +53,12 @@ function FIlterInvoices(props) {
           ref={inputEl1}
           className="invoice-filter__input"
         />
-        <span className="invoice-filter__fakeCheckbox">
+        <Box
+          className="invoice-filter__fakeCheckbox"
+          bgColor={`var(--theme-${curTheme}-primaryBg)`}
+        >
           <img src={iconChck} alt="Icon Tick" />
-        </span>
+        </Box>
         <label className="invoice-filter__label">Draft</label>
       </Box>
 
@@ -69,9 +74,12 @@ function FIlterInvoices(props) {
           ref={inputEl2}
           className="invoice-filter__input"
         />
-        <span className="invoice-filter__fakeCheckbox">
+        <Box
+          className="invoice-filter__fakeCheckbox"
+          bgColor={`var(--theme-${curTheme}-primaryBg)`}
+        >
           <img src={iconChck} alt="Icon Tick" />
-        </span>
+        </Box>
         <label className="invoice-filter__label">Pending</label>
       </Box>
 
@@ -87,9 +95,12 @@ function FIlterInvoices(props) {
           ref={inputEl3}
           className="invoice-filter__input"
         />
-        <span className="invoice-filter__fakeCheckbox">
+        <Box
+          className="invoice-filter__fakeCheckbox"
+          bgColor={`var(--theme-${curTheme}-primaryBg)`}
+        >
           <img src={iconChck} alt="Icon Tick" />
-        </span>
+        </Box>
         <label className="invoice-filter__label">Paid</label>
       </Box>
     </Box>
