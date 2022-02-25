@@ -1,5 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@200;300;400;500;600;700&display=swap");
 
+:root {
+  /* Colors  Primary Background*/
+  --theme-light-primaryBg: #f8f8fb;
+  --theme-dark-primaryBg: #141625;
+
+  /* Colors Secondary  Background */
+  --theme-dark-secondaryBg: #1e2139;
+  --theme-light-secondaryBg: #fff;
+
+  /* Colors Tertiary Background */
+  --theme-dark-tertiaryBg: #252945;
+  --theme-light-tertiaryBg: #f9fafe;
+
+  /* Colors  Primary Text */
+  --theme-dark-textColorPrimary: #fff;
+  --theme-light-textColorPrimary: #0c0e16;
+
+  /* Item Total Background */
+  --theme-dark-itemAmountBg: #0c0e16;
+  --theme-light-itemAmountBg: #373b53;
+
+  /* Colors secondary  Text*/
+  --theme-dark-textColorSecondary: #dfe3fa;
+  --theme-light-textColorSecondary: #7e88c3;
+
+  /* Colors Teritary Text */
+  --theme-dark-textColorTertiary: #fff;
+  --theme-lighti-textColorTertiary: #888eb0;
+
+  /* BUtton color*/
+  --theme-dark-BtnSecondaryBg: #252945;
+  --theme-light-BtnSecondaryBg: #f9fafe;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +46,6 @@ html {
 
 body {
   font-family: "Spartan", sans-serif;
-  background-color: #141625 !important;
 }
 
 .overflow {
