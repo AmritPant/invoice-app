@@ -4,6 +4,7 @@ import { Box, Text, Heading } from "@chakra-ui/react";
 import TopNavigation from "./TopNavigation";
 function TopBar() {
   const curTheme = useSelector((state) => state.theme.curTheme);
+  const numOfInvoices = useSelector((state) => state.invoice.data)?.length;
 
   return (
     <Box
@@ -22,7 +23,7 @@ function TopBar() {
           letterSpacing="-0.25px"
           color={`var(--theme-${curTheme}-textColorSecondary)`}
         >
-          There are 7 total Invoices
+          {`There are ${numOfInvoices} total Invoices`}
         </Text>
       </Box>
       <TopNavigation />
