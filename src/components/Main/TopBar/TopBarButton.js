@@ -44,7 +44,7 @@ function TopBarButton() {
           fontSize="1.2rem"
           letterSpacing="-0.25px"
         >
-          <Image src={addIcon} />
+          <Image src={addIcon} alt="Add Icon" />
         </Box>
         <Text fontSize="1.2rem" letterSpacing="-0.25px">
           New Invoice

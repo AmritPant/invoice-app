@@ -39,7 +39,7 @@ function TopNavigation() {
         >
           Filter By Status
         </Text>
-        <Image src={DownArrow} h="4.23px" w="8.26px" />
+        <Image src={DownArrow} h="4.23px" w="8.26px" alt="Down Arrow" />
       </Box>
       <FIlterInvoices display={filterBoxStatus ? "block" : "none"} />
       <TopBarButton />
