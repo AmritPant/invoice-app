@@ -32,6 +32,7 @@ function ThemeBox() {
         <Image
           onClick={themeIconClickHandler}
           src={curTheme === "dark" ? iconSun : iconMoon}
+          alt={curTheme === "light" ? "Moon Icon" : "Sun Icon"}
         />
       </Box>
       <Box
@@ -41,7 +42,7 @@ function ThemeBox() {
         alignItems="center"
         justifyContent="center"
       >
-        <Image h="4rem" w="4rem" borderRadius="50%" src={avatar} />
+        <Image h="4rem" w="4rem" borderRadius="50%" src={avatar} alt="Avatar" />
       </Box>
     </Box>
   );

@@ -58,7 +58,7 @@ function Invoice({ id, price, clientName, dueDate, status }) {
         {finalPrice}
       </Text>
       <StatusBox status={status} />
-      <Image src={iconRightArrow} />
+      <Image src={iconRightArrow} alt="Right Arrow" />
     </Box>
   );
 }

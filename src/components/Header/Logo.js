@@ -26,7 +26,7 @@ function LogoBox() {
         zIndex: "5",
       }}
     >
-      <Image h="4rem" w="4rem" zIndex="10" src={Logo} />
+      <Image h="4rem" w="4rem" zIndex="10" src={Logo} alt="Main Logo" />
     </Flex>
   );
 }

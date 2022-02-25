@@ -35,6 +35,7 @@ function CustomDropdown({ value = 30 }) {
         />
         <Image
           src={iconArroDown}
+          alt="Down Arrow"
           display="inline-block"
           ml="-2rem"
           zIndex="1000"
