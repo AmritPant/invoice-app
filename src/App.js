@@ -15,6 +15,7 @@ function App() {
   const [filterInvoiceStatus, setFilterInvoiceStatus] = useState([]);
   const formStatus = useSelector((state) => state.form.formStatus);
   const modalStatus = useSelector((state) => state.modal.modalStatus);
+  const numOfinvoice = useSelector((state) => state.invoice.data)?.length;
 
   const defaultInvoiceStatus = {
     inputEls: filterInvoiceStatus,
@@ -23,6 +24,9 @@ function App() {
 
   if (modalStatus) BODY.classList.add("overflow");
   BODY.style.backgroundColor = `var(--theme-${curTheme}-primaryBg)`;
+
+  // For the Dynamic Title
+  document.title = `Invoices(${numOfinvoice}) | Frontend Mentor`;
 
   return (
     <FilterInvoiceContext.Provider value={defaultInvoiceStatus}>
