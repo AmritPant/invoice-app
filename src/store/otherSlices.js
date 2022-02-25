@@ -29,3 +29,13 @@ export const ModalPopupSlice = createSlice({
     },
   },
 });
+
+export const ThemeSlice = createSlice({
+  name: "theme",
+  initialState: { curTheme: "light" },
+  reducers: {
+    setCurTheme(state, action) {
+      state.curTheme = action.payload;
+    },
+  },
+});
