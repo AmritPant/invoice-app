@@ -25,12 +25,12 @@ function ItemListInvoicePage(props) {
           <Text>Item Name</Text>
           <Box
             display="grid"
-            gridTemplateColumns="3rem 4rem 4rem"
-            gridColumnGap="10rem"
+            gridTemplateColumns="3rem 8rem 8rem"
+            gridColumnGap="2rem"
           >
-            <Text>QTY.</Text>
-            <Text>Price</Text>
-            <Text>Total</Text>
+            <Text textAlign="right">QTY.</Text>
+            <Text textAlign="right">Price</Text>
+            <Text textAlign="right">Total</Text>
           </Box>
         </Flex>
         <Box>
@@ -43,18 +43,19 @@ function ItemListInvoicePage(props) {
                 letterSpacing="-0.25px"
                 mt="1rem"
                 display="grid"
-                gridTemplateColumns="2.5fr 5rem 8rem 8rem"
-                gridGap="5rem"
+                gridTemplateColumns="2.5fr 3rem 8rem 8rem"
+                gridGap="2rem"
               >
                 <Text color={`var(--theme-${curTheme}-textColorPrimary)`}>
                   {item.name}
                 </Text>
-                <Text>{item.quantity}</Text>
-                <Text>{`£${Number(item.price)
+                <Text textAlign="center">{item.quantity}</Text>
+                <Text textAlign="right">{`£${Number(item.price)
                   .toFixed(2)
                   .toLocaleString("en-US")}`}</Text>
                 <Text
                   color={`var(--theme-${curTheme}-textColorPrimary)`}
+                  textAlign="right"
                 >{`£${Number(item.price * item.quantity)
                   .toFixed(2)
                   .toLocaleString("en-US")}`}</Text>
