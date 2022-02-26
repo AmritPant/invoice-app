@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Stack, Text, Box, FormLabel, Input, Flex } from "@chakra-ui/react";
+import { Input, Stack, Text, Box, FormLabel, Flex } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
 import iconArroDown from "../../assets/icon-arrow-down.svg";
 
@@ -25,6 +25,9 @@ function CustomDropdown({ value = 30 }) {
       <FormLabel display="block">Payment Terms</FormLabel>
       <Flex alignItems="center">
         <Input
+          bgColor={`var(--theme-${curTheme}-secondaryBg)`}
+          outline={`1px solid ${curTheme === "dark" ? "#252945" : "#dfe3fa"} `}
+          color={`var(--theme-${curTheme}-textColorPrimary)`}
           type="text"
           className="dropdown"
           id={curOptionNumber}
@@ -46,7 +49,7 @@ function CustomDropdown({ value = 30 }) {
         <Box
           bgColor={`var(--theme-${curTheme}-tertiaryBg)`}
           h="14rem"
-          w="15rem"
+          w="100%"
           pos="absolute"
           bottom="-15rem"
           p="1rem 0"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Flex } from "@chakra-ui/react";
 import Header from "./components/Header/Header";
@@ -26,7 +26,9 @@ function App() {
   BODY.style.backgroundColor = `var(--theme-${curTheme}-primaryBg)`;
 
   // For the Dynamic Title
-  document.title = `Invoices(${numOfinvoice}) | Frontend Mentor`;
+  useEffect(() => {
+    document.title = `Invoices (${numOfinvoice}) | Frontend Mentor`;
+  }, [window.location]);
 
   return (
     <FilterInvoiceContext.Provider value={defaultInvoiceStatus}>
