@@ -23,40 +23,42 @@ function ItemListInvoicePage(props) {
           justifyContent="space-between"
         >
           <Text>Item Name</Text>
-          <Flex flex="0.5" justifyContent="space-between">
+          <Box
+            display="grid"
+            gridTemplateColumns="3rem 4rem 4rem"
+            gridColumnGap="10rem"
+          >
             <Text>QTY.</Text>
             <Text>Price</Text>
             <Text>Total</Text>
-          </Flex>
+          </Box>
         </Flex>
         <Box>
           {clickedItem.items.map((item) => {
             return (
-              <Flex
+              <Box
                 key={item.name + Math.random()}
-                justifyContent="space-between"
-                mt="1rem"
-                fontSize="1.3rem"
                 fontWeight="bold"
+                fontSize="1.3rem"
                 letterSpacing="-0.25px"
+                mt="1rem"
+                display="grid"
+                gridTemplateColumns="2.5fr 5rem 8rem 8rem"
+                gridGap="5rem"
               >
                 <Text color={`var(--theme-${curTheme}-textColorPrimary)`}>
                   {item.name}
                 </Text>
-                <Flex>
-                  <Text>{item.quantity}</Text>
-                  <Text ml="6.5rem">{`£${Number(item.price)
-                    .toFixed(2)
-                    .toLocaleString("en-US")}`}</Text>
-
-                  <Text
-                    ml="5rem"
-                    color={`var(--theme-${curTheme}-textColorPrimary)`}
-                  >{`£${Number(item.price * item.quantity)
-                    .toFixed(2)
-                    .toLocaleString("en-US")}`}</Text>
-                </Flex>
-              </Flex>
+                <Text>{item.quantity}</Text>
+                <Text>{`£${Number(item.price)
+                  .toFixed(2)
+                  .toLocaleString("en-US")}`}</Text>
+                <Text
+                  color={`var(--theme-${curTheme}-textColorPrimary)`}
+                >{`£${Number(item.price * item.quantity)
+                  .toFixed(2)
+                  .toLocaleString("en-US")}`}</Text>
+              </Box>
             );
           })}
         </Box>
