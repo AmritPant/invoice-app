@@ -17,6 +17,9 @@ function InvoicePage() {
     (invoice) => invoice.id === params.invoiceId
   ).at(0);
 
+  //  Setting the title
+  document.title = `Invoice | ${params.invoiceId}`;
+
   return (
     <Flex flex="0.9" flexDir="column" alignItems="center" pt="4rem">
       <InvoicePageHeader
