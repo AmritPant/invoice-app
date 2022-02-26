@@ -9,7 +9,12 @@ function InvoicePageGoBackLink() {
   const curTheme = useSelector((state) => state.theme.curTheme);
   return (
     <NavLink to="/" className={`goBackLink goBackLink__${curTheme}`}>
-      <Image src={iconChevromLeft} display="inline-block" mr="1.5rem" />
+      <Image
+        src={iconChevromLeft}
+        display="inline-block"
+        mr="1.5rem"
+        alt="Arrow Left"
+      />
       Go Back
     </NavLink>
   );
