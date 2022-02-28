@@ -34,7 +34,7 @@ function InvoicePageHeader({ status, id }) {
   };
 
   return (
-    <Box width="65%">
+    <Box width={{ base: "90vw", md: "65%" }}>
       <InvoicePageGoBackLink />
       <Flex
         bgColor={`var(--theme-${curTheme}-secondaryBg)`}
@@ -45,13 +45,22 @@ function InvoicePageHeader({ status, id }) {
         color={`var(--theme-${curTheme}-textColorSecondary)`}
         boxShadow="0 10px 10px -10px rgba(72,84,159,0.14)"
       >
-        <Flex alignItems="center">
+        <Flex
+          alignItems="center"
+          justifyContent={{ base: "space-between", sm: "" }}
+          width={{ base: "100%", sm: "auto" }}
+        >
           <Text fontSize="1.2rem" fontWeight="medium" mr="1rem">
             Status
           </Text>
           <StatusBox status={status} />
         </Flex>
-        <Box>
+        <Box
+          position={{ base: "absolute", sm: "unset" }}
+          bottom="0"
+          right="10%"
+          mb={{ base: "2rem", sm: "" }}
+        >
           <ButtonSecondary onClick={editButtonHandler}>Edit</ButtonSecondary>
           <ButtonTertiary onClick={deleteButtonClickHandler}>
             Delete

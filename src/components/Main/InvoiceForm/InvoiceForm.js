@@ -136,15 +136,15 @@ function InvoiceForm({ type, data }) {
     <Flex
       position="absolute"
       top="0"
-      left="7%"
+      left={{ base: "0", xl: "7%" }}
       flexDir="column"
       justifyContent="space-between"
       padding="2rem 3rem"
       height="100vh"
       bgColor={curTheme === "dark" ? "#141625" : "#fff"}
-      zIndex="300"
+      zIndex={{ base: "1000", xl: "300" }}
       color={`var(--theme-${curTheme}-textColorPrimary)`}
-      width="40%"
+      width={{ base: "100%", md: "60%", xl: "40%" }}
       className="invoice-form"
     >
       {type === "new" && <Heading>New Invoice</Heading>}
@@ -166,7 +166,10 @@ function InvoiceForm({ type, data }) {
       {type === "new" && (
         <Box display="flex" justifyContent="flex-end" marginLeft="auto">
           <ButtonExtra onClick={CloseModalAndForm}>Discard</ButtonExtra>
-          <ButtonSecondary onClick={draftClickHandler}>
+          <ButtonSecondary
+            onClick={draftClickHandler}
+            style={{ widht: "5rem" }}
+          >
             Save as Draft
           </ButtonSecondary>
           <ButtonPrimary onClick={saveClickHandler}>Save & Send</ButtonPrimary>

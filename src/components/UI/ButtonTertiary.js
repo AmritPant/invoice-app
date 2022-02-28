@@ -4,12 +4,12 @@ import { Button } from "@chakra-ui/react";
 function ButtonTertiary({ children, onClick }) {
   return (
     <Button
-      w="8.9rem"
+      w={{ sm: "7rem", md: "8.9rem" }}
       h="4.8rem"
       bgColor="#EC5757"
       borderRadius="2.4rem"
       color="#fff"
-      fontSize="12px"
+      fontSize="1.2rem"
       fontWeight="bold"
       letterSpacing="-0.25px"
       marginRight="1rem"

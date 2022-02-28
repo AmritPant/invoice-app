@@ -22,11 +22,11 @@ function TopNavigation() {
   });
 
   return (
-    <Box ml="31rem" display="flex" alignItems="center" position="relative">
+    <Box ml="auto" display="flex" alignItems="center" position="relative">
       <Box
         display="flex"
         alignItems="center"
-        mr="3rem"
+        mr={{ base: "1.5rem", sm: "3rem" }}
         cursor="pointer"
         onClick={onClickFilterHandler}
         id="filterText"
@@ -37,7 +37,11 @@ function TopNavigation() {
           fontWeight="bold"
           mr="1rem"
         >
-          Filter By Status
+          Filter{" "}
+          <Text display={{ base: "none", sm: "inline-block" }}>
+            {" "}
+            By Status{" "}
+          </Text>
         </Text>
         <Image src={DownArrow} h="4.23px" w="8.26px" alt="Down Arrow" />
       </Box>

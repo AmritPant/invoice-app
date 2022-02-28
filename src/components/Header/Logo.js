@@ -9,7 +9,7 @@ function LogoBox() {
     <Flex
       position="relative"
       bgColor="#7C5DFA"
-      h="10rem"
+      h={{ base: "8rem", xl: "10rem" }}
       w="10rem"
       borderRadius="0 2rem 2rem 0"
       alignItems="center"

@@ -19,14 +19,24 @@ function ThemeBox() {
     dispatch(ThemeSliceActions.setCurTheme("dark"));
   };
   return (
-    <Box>
+    <Box
+      display="flex"
+      flexDir={{
+        base: "row",
+        xl: "column",
+      }}
+      alignItems="center"
+    >
       <Box
         display="flex"
         alignItems="center"
         justifyContent="center"
-        pb="2rem"
-        mb="1rem"
-        borderBottom="1px solid #494E6E"
+        height={{ base: "100%", xl: "auto" }}
+        width={{ base: "auto", xl: "100%" }}
+        p={{ base: "0 2rem", xl: "2rem 0" }}
+        m={{ base: "0 1rem", xl: "1rem 0" }}
+        borderBottom={{ xl: "1px solid #494E6E" }}
+        borderRight={{ base: "1px solid #494E6E", xl: "none" }}
         cursor="pointer"
       >
         <Image
@@ -41,6 +51,8 @@ function ThemeBox() {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        p={{ base: "0 2rem", xl: "2rem 0" }}
+        m={{ base: "0 1rem", xl: "1rem 0" }}
       >
         <Image h="4rem" w="4rem" borderRadius="50%" src={avatar} alt="Avatar" />
       </Box>

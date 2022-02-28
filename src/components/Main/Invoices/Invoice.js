@@ -19,12 +19,20 @@ function Invoice({ id, price, clientName, dueDate, status }) {
 
   return (
     <Box
-      display="Flex"
+      display="grid"
+      alignItems="center"
+      gridTemplateColumns={{
+        base: "repeat(2,1fr)",
+        md: "0.14fr 0.3fr 0.4fr 0.2fr 0.1fr 0.1fr ",
+      }}
+      gridTemplateRows={{
+        base: "1fr 0.5fr 1fr",
+        md: "1fr",
+      }}
       backgroundColor={`var(--theme-${curTheme}-secondaryBg)`}
       width="73.2rem"
-      h="7.2rem"
+      h={{ base: "13rem", md: "7.2rem" }}
       borderRadius="8px"
-      alignItems="center"
       padding="0 2rem"
       className="invoice"
       marginBottom="2rem"
@@ -33,19 +41,21 @@ function Invoice({ id, price, clientName, dueDate, status }) {
       boxShadow="0 10px 10px -10px rgb(72,84,159 , 0.14)"
       position="relative"
     >
-      <Text fontWeight="bold">
+      <Text fontWeight="bold" className="invoice__id">
         <span className="span"># </span>
         {id}
       </Text>
       <Text
         color={`var(--theme-${curTheme}-textColorSecondary)`}
         fontWeight="medium"
+        className="invoice__date"
       >
         {finalDate}
       </Text>
       <Text
         fontWeight="medium"
         color={`var(--theme-${curTheme}-textColorTertiary)`}
+        className="invoice__name"
       >
         {clientName}
       </Text>
@@ -54,11 +64,16 @@ function Invoice({ id, price, clientName, dueDate, status }) {
         fontSize="1.6rem"
         fontWeight="bold"
         letterSpacing="-0.8px"
+        className="invoice__price"
       >
         {finalPrice}
       </Text>
       <StatusBox status={status} />
-      <Image src={iconRightArrow} alt="Right Arrow" />
+      <Image
+        display={{ base: "none", md: "block" }}
+        src={iconRightArrow}
+        alt="Right Arrow"
+      />
     </Box>
   );
 }

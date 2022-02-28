@@ -23,24 +23,24 @@ function StatusBox({ status }) {
 
   return (
     <Box
-      width="10.04rem"
+      width={{ base: "9rem", md: "10.04rem" }}
       h="4rem"
       backgroundColor={statusBackgroundColor}
       display="flex"
       alignItems="center"
       justifyContent="center"
-      borderRadius="6px"
-      className="status-box"
+      borderRadius="0.6rem"
+      className="invoice__status status-box"
     >
       <Box
-        w="8px"
-        h="8px"
+        w="0.8rem"
+        h="0.8rem"
         borderRadius="50%"
         backgroundColor={statusColor}
         mr="0.5rem"
       ></Box>
       <Text
-        fontSize="12px"
+        fontSize="1.2rem"
         letterSpacing="-0.25px"
         fontWeight="Bold"
         color={statusColor}

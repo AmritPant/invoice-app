@@ -35,7 +35,7 @@ function ModalPopup({ id }) {
       top="50%"
       left="50%"
       padding="2rem 3rem"
-      width="46rem"
+      width={{ base: "30rem", sm: "46rem" }}
       transform="translate(-50% ,-50%)"
       borderRadius="8px"
       zIndex="600"

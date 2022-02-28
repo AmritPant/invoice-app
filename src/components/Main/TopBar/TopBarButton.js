@@ -19,7 +19,7 @@ function TopBarButton() {
     <Box color="#fff">
       <Button
         varient="solid"
-        width="15rem"
+        width={{ base: "13rem", sm: "15rem" }}
         height="4.8rem"
         display="inline-flex"
         backgroundColor="#7C5DFA"
@@ -33,18 +33,22 @@ function TopBarButton() {
         onClick={onClickBtnHandler}
       >
         <Box
-          width="3.2rem"
-          h="3.2rem"
+          width={{ base: "2.5rem", sm: "3.2rem " }}
+          h={{ base: "2.5rem", sm: "3.2rem" }}
           borderRadius="50%"
           backgroundColor="#fff"
           display="flex"
           alignItems="center"
           justifyContent="center"
-          mr="2rem"
+          mr={{ base: "1rem", sm: "2rem" }}
           fontSize="1.2rem"
           letterSpacing="-0.25px"
         >
-          <Image src={addIcon} alt="Add Icon" />
+          <Image
+            src={addIcon}
+            alt="Add Icon"
+            height={{ base: ".9rem", sm: "auto" }}
+          />
         </Box>
         <Text fontSize="1.2rem" letterSpacing="-0.25px">
           New Invoice

@@ -42,7 +42,7 @@ function CustomDropdown({ value = 30 }) {
           display="inline-block"
           ml="-2rem"
           zIndex="1000"
-          height="1rem"
+          height=".7rem"
         />
       </Flex>
       {dropdownOptionStatus && (

@@ -13,6 +13,7 @@ function ItemListInvoicePage(props) {
       mt="4rem"
       p="2rem 0 0 0"
       bgColor={`var(--theme-${curTheme}-tertiaryBg)`}
+      mb={{ base: "9rem", sm: "0" }}
       borderRadius="8px 8px 00"
     >
       <Box color={`var(--theme-${curTheme}-textColorSecondary)`} p="0 3rem">
@@ -24,7 +25,7 @@ function ItemListInvoicePage(props) {
         >
           <Text>Item Name</Text>
           <Box
-            display="grid"
+            display={{ base: "none", sm: "grid" }}
             gridTemplateColumns="3rem 8rem 8rem"
             gridColumnGap="2rem"
           >
@@ -43,19 +44,49 @@ function ItemListInvoicePage(props) {
                 letterSpacing="-0.25px"
                 mt="1rem"
                 display="grid"
-                gridTemplateColumns="2.5fr 3rem 8rem 8rem"
-                gridGap="2rem"
+                gridTemplateColumns={{
+                  base: "0.5fr 0.5fr 1fr",
+                  sm: "2.5fr 3rem 8rem 8rem",
+                }}
+                gridGap={{ base: "0", sm: "2rem" }}
               >
-                <Text color={`var(--theme-${curTheme}-textColorPrimary)`}>
+                {/* --------------------------------------------------------------------- */}
+                {/* Name */}
+                {/* --------------------------------------------------------------------- */}
+                <Text
+                  color={`var(--theme-${curTheme}-textColorPrimary)`}
+                  gridColumn={{ base: "1/3", sm: "1/2" }}
+                >
                   {item.name}
                 </Text>
-                <Text textAlign="center">{item.quantity}</Text>
-                <Text textAlign="right">{`£${Number(item.price)
+                {/* --------------------------------------------------------------------- */}
+                {/* Quantity */}
+                {/* --------------------------------------------------------------------- */}
+                <Text textAlign={{ base: "left", sm: "center" }}>
+                  {item.quantity}{" "}
+                  <Text display={{ base: "inline-block", sm: "none" }}>x</Text>
+                </Text>
+                {/* --------------------------------------------------------------------- */}
+                {/* Price */}
+                {/* --------------------------------------------------------------------- */}
+                <Text
+                  textAlign={{ base: "left", sm: "right" }}
+                  ml={{
+                    base: "-67%",
+                    sm: "0",
+                  }}
+                >{`£${Number(item.price)
                   .toFixed(2)
                   .toLocaleString("en-US")}`}</Text>
+
+                {/* --------------------------------------------------------------------- */}
+                {/* Total */}
+                {/* --------------------------------------------------------------------- */}
                 <Text
                   color={`var(--theme-${curTheme}-textColorPrimary)`}
                   textAlign="right"
+                  gridColumn={{ base: "3/4" }}
+                  gridRow={{ base: "1/3" }}
                 >{`£${Number(item.price * item.quantity)
                   .toFixed(2)
                   .toLocaleString("en-US")}`}</Text>

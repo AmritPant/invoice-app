@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import FilterInvoiceContext from "./contexts/FilterInvoice";
@@ -27,13 +27,21 @@ function App() {
 
   // For the Dynamic Title
   useEffect(() => {
-    document.title = `Invoices (${numOfinvoice}) | Frontend Mentor`;
+    if (window.location.pathname === "/")
+      document.title = `Invoices (${numOfinvoice}) | Frontend Mentor`;
+    return;
   }, [window.location]);
 
   return (
     <FilterInvoiceContext.Provider value={defaultInvoiceStatus}>
       {modalStatus && <Modal />}
-      <Flex>
+      <Box
+        display="flex"
+        flexDir={{
+          base: "column",
+          xl: "row",
+        }}
+      >
         <Header />
         {formStatus && <InvoiceForm type="new" />}
         <BrowserRouter>
@@ -46,7 +54,7 @@ function App() {
             </Route>
           </Switch>
         </BrowserRouter>
-      </Flex>
+      </Box>
     </FilterInvoiceContext.Provider>
   );
 }

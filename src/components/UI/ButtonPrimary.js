@@ -5,7 +5,7 @@ function ButtonPrimary({ children, onClick }) {
   return (
     <Button
       h="4.8rem"
-      w="13.8rem"
+      w={{ base: "11rem", md: "13.8rem" }}
       bgColor="#7C5DFA"
       borderRadius="2.4rem"
       fontSize="1.2rem"

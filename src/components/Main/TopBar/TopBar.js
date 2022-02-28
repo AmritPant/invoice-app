@@ -12,9 +12,14 @@ function TopBar() {
       justifyContent="space-around"
       color={`var(--theme-${curTheme}-textColorPrimary)`}
       alignItems="center"
+      width={{ base: "90vw", md: "73.2rem" }}
     >
       <Box>
-        <Heading fontSize="3.2rem" fontWeight="Bold" letterSpacing="-1px">
+        <Heading
+          fontSize={{ base: "2.5rem", sm: "3.2rem" }}
+          fontWeight="Bold"
+          letterSpacing="-1px"
+        >
           Invoices
         </Heading>
         <Text
@@ -23,7 +28,9 @@ function TopBar() {
           letterSpacing="-0.25px"
           color={`var(--theme-${curTheme}-textColorSecondary)`}
         >
-          {`There are ${numOfInvoices} total Invoices`}
+          {numOfInvoices > 0
+            ? `There are ${numOfInvoices} total Invoices`
+            : "No Invoice"}
         </Text>
       </Box>
       <TopNavigation />

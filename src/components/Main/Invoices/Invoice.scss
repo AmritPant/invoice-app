@@ -7,16 +7,49 @@
   letter-spacing: -0.25px;
 }
 
-.invoice:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 8px;
-  width: 73.2rem;
-  height: 7.2rem;
-  border: 1px solid #7c5dfa;
-  background: transparent;
+@media screen and (max-width: 48em) {
+  .invoice {
+    grid-template-areas: "id name " "date date " "price status";
+    padding: 2rem;
+    width: 90vw !important;
+
+    &__id {
+      grid-area: id;
+    }
+
+    &__name {
+      grid-area: name;
+      justify-self: end;
+    }
+
+    &__date {
+      grid-area: date;
+      margin-left: 0 !important;
+    }
+    &__price {
+      width: 100%;
+      grid-area: price;
+      justify-self: start;
+      margin-top: 0 !important;
+    }
+    &__status {
+      grid-area: status;
+      justify-self: end;
+    }
+  }
+}
+
+.invoice:hover {
+  outline-color: #7c5dfa;
+  outline-style: solid;
+  outline-width: 1px;
+}
+
+@media screen and (min-widht: 48em) {
+  .invocice:hover::before {
+    width: 90vw;
+    height: 13rem;
+  }
 }
 
 .span {
