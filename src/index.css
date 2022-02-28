@@ -27,7 +27,7 @@
 
   /* Colors Teritary Text */
   --theme-dark-textColorTertiary: #fff;
-  --theme-lighti-textColorTertiary: #888eb0;
+  --theme-light-textColorTertiary: #888eb0;
 
   /* BUtton color*/
   --theme-dark-BtnSecondaryBg: #252945;
@@ -42,6 +42,12 @@
 
 html {
   font-size: 10px;
+}
+
+@media screen and (max-width: 48em) {
+  html {
+    font-size: 8px;
+  }
 }
 
 body {

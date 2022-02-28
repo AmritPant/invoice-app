@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Box, Input, FormLabel, Select } from "@chakra-ui/react";
 import InputHeading from "../../../UI/InputHeading";
 import CustomInput from "../../../UI/Input";
@@ -6,6 +7,7 @@ import CustomDropdown from "../../../UI/CustomDropdown";
 
 function BillTo({ data }) {
   const tempDate = new Date();
+  const curTheme = useSelector((state) => state.theme.curTheme);
   // Used French --> Canada because that supports the required format
   // Visit this link for  more info:  https://gist.github.com/mlconnor/1887156
   const TodayDate = tempDate.toLocaleDateString("fr-CA");
@@ -55,7 +57,8 @@ function BillTo({ data }) {
         {/* Date and select Box */}
         <Box
           gridArea="dateBox"
-          display="flex"
+          display="grid"
+          gridTemplateColumns="1fr 1fr"
           justifyContent="space-between"
           alignItems="center"
         >
@@ -63,6 +66,11 @@ function BillTo({ data }) {
             <FormLabel htmlFor="date">Item Date </FormLabel>
             <Input
               type="date"
+              bgColor={`var(--theme-${curTheme}-secondaryBg)`}
+              outline={`1px solid ${
+                curTheme === "dark" ? "#252945" : "#dfe3fa"
+              } `}
+              color={`var(--theme-${curTheme}-textColorPrimary)`}
               id="date"
               defaultValue={data ? data.createdAt : TodayDate}
             />

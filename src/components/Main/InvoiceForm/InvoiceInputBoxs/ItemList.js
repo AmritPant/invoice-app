@@ -82,7 +82,7 @@ function ItemList({ data }) {
           gridTemplateColumns="0.4fr 0.1fr 0.25fr  0.25fr"
           gridColumnGap="2rem"
           mb="1rem"
-          color="#DFE3FA"
+          color={curTheme === "dark" ? "#DFE3FA" : "#7e88c3"}
           fontWeight="medium"
           fontSize="1.2rem"
         >
