@@ -25,7 +25,7 @@ function Proflle() {
       bgColor={`var(--theme-${curTheme}-secondaryBg)`}
       color={curTheme === "dark" ? "#fff" : "#0c0e16"}
       position="absolute"
-      top="50%"
+      top={{ base: "30%", sm: "50%" }}
       left="50%"
       padding="2rem 4rem"
       width="30rem"
