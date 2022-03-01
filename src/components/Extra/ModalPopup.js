@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
+import { BODY } from "../../Helpers/Helper";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import ButtonSecondary from "../UI/ButtonSecondary";
@@ -25,6 +26,7 @@ function ModalPopup({ id }) {
     dispatch(ModalSliceActions.setModalStatus(false));
     dispatch(invoiceDataActions.deleteInvoice(id));
     history.replace("/");
+    BODY.classList.remove("overflow");
   };
 
   return (
