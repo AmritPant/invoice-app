@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Heading } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
 import DownArrow from "../../../assets/icon-arrow-down.svg";
 import TopBarButton from "./TopBarButton";
@@ -31,19 +31,24 @@ function TopNavigation() {
         onClick={onClickFilterHandler}
         id="filterText"
       >
-        <Text
+        <Heading
           fontSize="1.2rem"
           letterSpacing="-0.25px"
           fontWeight="bold"
           mr="1rem"
         >
-          Filter{" "}
+          Filter
           <Text display={{ base: "none", sm: "inline-block" }}>
-            {" "}
-            By Status{" "}
+            &nbsp; By Status
           </Text>
-        </Text>
-        <Image src={DownArrow} h="4.23px" w="8.26px" alt="Down Arrow" />
+        </Heading>
+        <Image
+          src={DownArrow}
+          className={filterBoxStatus ? "rotate" : "notRotate"}
+          h="4.23px"
+          w="8.26px"
+          alt="Down Arrow"
+        />
       </Box>
       <FIlterInvoices display={filterBoxStatus ? "block" : "none"} />
       <TopBarButton />

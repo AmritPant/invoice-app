@@ -61,3 +61,13 @@ body {
 *:focus {
   box-shadow: none !important;
 }
+
+.rotate {
+  transform: rotate(-180deg);
+  transition: all 0.5s;
+}
+
+.notRotate {
+  transform: rotate((180deg));
+  transition: all 0.5s;
+}

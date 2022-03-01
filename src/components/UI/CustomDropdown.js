@@ -38,6 +38,7 @@ function CustomDropdown({ value = 30 }) {
         />
         <Image
           src={iconArroDown}
+          className={dropdownOptionStatus ? "rotate" : "notRotate"}
           alt="Down Arrow"
           display="inline-block"
           ml="-2rem"
