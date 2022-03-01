@@ -9,6 +9,7 @@ import InvoiceForm from "./components/Main/InvoiceForm/InvoiceForm";
 import { BODY } from "./Helpers/Helper";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import InvoicePage from "./pages/InvoicePage";
+import Profile from "./components/Profile/Proflle";
 
 function App() {
   const curTheme = useSelector((state) => state.theme.curTheme);
@@ -16,6 +17,7 @@ function App() {
   const formStatus = useSelector((state) => state.form.formStatus);
   const modalStatus = useSelector((state) => state.modal.modalStatus);
   const numOfinvoice = useSelector((state) => state.invoice.data)?.length;
+  const profileStatus = useSelector((state) => state.profile.profileStatus);
 
   const defaultInvoiceStatus = {
     inputEls: filterInvoiceStatus,
@@ -35,6 +37,7 @@ function App() {
   return (
     <FilterInvoiceContext.Provider value={defaultInvoiceStatus}>
       {modalStatus && <Modal />}
+      {profileStatus && <Profile />}
       <Box
         display="flex"
         flexDir={{

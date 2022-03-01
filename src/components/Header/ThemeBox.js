@@ -2,7 +2,11 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
 import { useSelector, useDispatch } from "react-redux";
-import { ThemeSliceActions } from "../../store/store";
+import {
+  ThemeSliceActions,
+  ProfileSliceActions,
+  ModalSliceActions,
+} from "../../store/store";
 import iconSun from "../../assets/icon-sun.svg";
 import iconMoon from "../../assets/icon-moon.svg";
 import avatar from "../../assets/user.jpeg";
@@ -17,6 +21,11 @@ function ThemeBox() {
       return;
     }
     dispatch(ThemeSliceActions.setCurTheme("dark"));
+  };
+
+  const onClickImageHandler = () => {
+    dispatch(ProfileSliceActions.setProfileStatus(true));
+    dispatch(ModalSliceActions.setModalStatus(true));
   };
   return (
     <Box
@@ -54,7 +63,14 @@ function ThemeBox() {
         p={{ base: "0 2rem", xl: "2rem 0" }}
         m={{ base: "0 1rem", xl: "1rem 0" }}
       >
-        <Image h="4rem" w="4rem" borderRadius="50%" src={avatar} alt="Avatar" />
+        <Image
+          h="4rem"
+          w="4rem"
+          borderRadius="50%"
+          src={avatar}
+          alt="Avatar"
+          onClick={onClickImageHandler}
+        />
       </Box>
     </Box>
   );

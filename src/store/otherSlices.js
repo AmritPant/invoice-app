@@ -39,3 +39,13 @@ export const ThemeSlice = createSlice({
     },
   },
 });
+
+export const ProfileSlice = createSlice({
+  name: "profile",
+  initialState: { profileStatus: false },
+  reducers: {
+    setProfileStatus(state, action) {
+      state.profileStatus = action.payload;
+    },
+  },
+});

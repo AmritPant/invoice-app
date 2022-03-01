@@ -6,6 +6,7 @@ import {
   FilterInvoicesSlice,
   ModalPopupSlice,
   ThemeSlice,
+  ProfileSlice,
 } from "./otherSlices";
 
 const store = configureStore({
@@ -16,6 +17,7 @@ const store = configureStore({
     popup: ModalPopupSlice.reducer,
     invoice: invoiceDataSlice.reducer,
     theme: ThemeSlice.reducer,
+    profile: ProfileSlice.reducer,
   },
 });
 
@@ -25,5 +27,6 @@ export const FilterInvoiceActions = FilterInvoicesSlice.actions;
 export const ModalPopupActions = ModalPopupSlice.actions;
 export const invoiceDataActions = invoiceDataSlice.actions;
 export const ThemeSliceActions = ThemeSlice.actions;
+export const ProfileSliceActions = ProfileSlice.actions;
 
 export default store;

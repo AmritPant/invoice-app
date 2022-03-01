@@ -6,6 +6,7 @@ import {
   FormSliceActions,
   ModalSliceActions,
   ModalPopupActions,
+  ProfileSliceActions,
 } from "../../store/store";
 
 function Modal() {
@@ -15,6 +16,7 @@ function Modal() {
     dispatch(ModalSliceActions.setModalStatus(false));
     dispatch(FormSliceActions.setFormStatus(false));
     dispatch(ModalPopupActions.setModalPopupStatus(false));
+    dispatch(ProfileSliceActions.setProfileStatus(false));
     BODY.classList.remove("overflow");
   };
 
