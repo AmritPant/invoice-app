@@ -13,11 +13,11 @@ function Proflle() {
     },
     {
       name: "Follow Me on Twitter",
-      href: "https://github.com/AmritPant/invoice-app",
+      href: "https://twitter.com/Amrit41424619",
     },
     {
       name: "Visit the Solution",
-      href: "https://twitter.com/Amrit41424619",
+      href: "https://github.com/AmritPant/invoice-app",
     },
   ];
   return (
