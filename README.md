@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click Here](https://invoiceappamrit.vercel.app)
+- Solution URL: [Click Here](https://www.frontendmentor.io/solutions/responsive-invoice-app-using-react-and-redux-B1YhG9kv5)
 - Live Site URL: [Click Here](https://invoiceappamrit.vercel.app)
 - Github Link: [click Here](https://github.com/AmritPant/invoice-app)
 
