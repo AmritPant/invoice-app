@@ -14,8 +14,6 @@ This is a solution to the [Invoice app challenge on Frontend Mentor](https://www
   - [Useful resources](#useful-resources)
   - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -55,7 +53,7 @@ Users should be able to:
 
 ### What I learned
 
-Use this section I learned how to use redux and manage state in efficent way.
+In this project, I learned how to use redux and manage state in efficent way. I also get my hands dirty on react router dom.
 
 ### Useful resources
 
